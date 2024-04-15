@@ -32,6 +32,12 @@ const startApp = async () => {
     app.use(express.json());
     app.use('/', require('./routes/user')());
 
+    app.get('/', (req, res) => {
+        res.status(200).json({
+            message: "github.com/richoandy/authentication-api-server"
+        })
+    });
+
     // start server
     const server = app.listen(port);
     console.log('Express started. Listening on %s', port);
