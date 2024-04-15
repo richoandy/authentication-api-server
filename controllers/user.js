@@ -42,7 +42,7 @@ module.exports = {
                 password: req.body.password,
             });
 
-            return res.status(201).json({
+            return res.status(200).json({
                 message: "account succesfully created",
                 user: {
                     user_id: req.body.user_id,
