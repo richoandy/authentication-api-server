@@ -77,7 +77,7 @@ module.exports = {
         try {
             await userRepository.delete(req.loggedInUser);
             return res.status(200).json({
-                message: 'Account and user succesfully removed'
+                message: 'Account and user successfully removed'
             });
         } catch (error) {
             return res.status(500).json({
@@ -192,10 +192,10 @@ module.exports = {
             );
             return res.status(200).json({
                 message: 'User succesfully updated',
-                recipe: clean({
+                recipe: [clean({
                     nickname: req.body.nickname,
                     comment: req.body.comment
-                })
+                })]
             });
         } catch (error) {
             return res.status(500).json({
