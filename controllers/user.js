@@ -77,7 +77,7 @@ module.exports = {
         try {
             await userRepository.delete(req.loggedInUser);
             return res.status(200).json({
-                message: 'account and user succesfully removed'
+                message: 'Account and user succesfully removed'
             });
         } catch (error) {
             return res.status(500).json({
@@ -103,7 +103,7 @@ module.exports = {
                 );
             } else {
                 return res.status(404).json({
-                    message: 'no user found',
+                    message: 'No User found',
                 });
             }
         } catch (error) {
@@ -117,7 +117,7 @@ module.exports = {
     update: async function (req, res) {
         if (req.body.user_id || req.body.password) {
             return res.status(400).json({
-                message: 'user updation failed',
+                message: 'User updation failed',
                 cause: 'not updatable user_id and password'
             });
         }
@@ -131,7 +131,7 @@ module.exports = {
 
         if (req.params.user_id !== req.loggedInUser) {
             return res.status(403).json({
-                message: 'no permission for update'
+                message: 'No Permission for Update'
             });
         }
 
@@ -178,7 +178,7 @@ module.exports = {
         const user = await userRepository.findOne(req.params.user_id);
         if (!user) {
             res.status(404).json({
-                message: 'no user found'
+                message: 'No User found'
             });
         }
 
@@ -191,7 +191,7 @@ module.exports = {
                 })
             );
             return res.status(200).json({
-                message: 'user succesfully updated',
+                message: 'User succesfully updated',
                 recipe: clean({
                     nickname: req.body.nickname,
                     comment: req.body.comment
@@ -199,7 +199,7 @@ module.exports = {
             });
         } catch (error) {
             return res.status(500).json({
-                message: 'user updation failed',
+                message: 'User Updation failed',
                 cause: 'internal server error',
             });
         }
