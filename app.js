@@ -33,7 +33,7 @@ const startApp = async () => {
     app.use('/', require('./routes/user')());
 
     app.get('/', (req, res) => {
-        res.status(200).json({
+        res.status(404).json({
             message: "github.com/richoandy/authentication-api-server"
         })
     });
