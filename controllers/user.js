@@ -15,7 +15,7 @@ module.exports = {
 
         if (userIdSchemaCheck.error) {
             return res.status(400).json({
-                message: 'account creation failed',
+                message: 'Account creation failed',
                 cause: userIdSchemaCheck.error.message
             });
         }
@@ -31,7 +31,7 @@ module.exports = {
 
         if (passwordSchemaCheck.error) {
             return res.status(400).json({
-                message: 'account creation failed',
+                message: 'Account creation failed',
                 cause: passwordSchemaCheck.error.message
             });
         }
@@ -43,7 +43,7 @@ module.exports = {
             });
 
             return res.status(200).json({
-                message: "account succesfully created",
+                message: "Account succesfully created",
                 user: {
                     user_id: req.body.user_id,
                     nickname: req.body.user_id,
