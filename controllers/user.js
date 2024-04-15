@@ -7,6 +7,7 @@ const { clean } = require('../utils/helper');
 module.exports = {
     signup: async function (req, res) {
         const userIdSchema = Joi.string()
+            .required()
             .regex(/^[a-zA-Z0-9]{6,20}$/)
             .message('The user id must be 6 to 20 characters long and contain only alphanumeric characters.');
 
@@ -20,6 +21,7 @@ module.exports = {
         }
 
         const passwordSchema = Joi.string()
+            .required()
             .min(8)
             .max(20)
             .regex(/^[!-~]{8,20}$/) // Matches ASCII printable characters (excluding space)
