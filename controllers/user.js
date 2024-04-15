@@ -93,7 +93,7 @@ module.exports = {
 
             if (user) {
                 return res.status(200).json({
-                    message: 'user details by user_id',
+                    message: 'User details by user_id',
                     user: clean({
                         user_id: user.user_id,
                         nickname: user.nickname ? user.nickname : user.user_id,
