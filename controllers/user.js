@@ -43,7 +43,7 @@ module.exports = {
             });
 
             return res.status(200).json({
-                message: "Account succesfully created",
+                message: "Account successfully created",
                 user: {
                     user_id: req.body.user_id,
                     nickname: req.body.user_id,
@@ -190,8 +190,9 @@ module.exports = {
                     comment: req.body.comment
                 })
             );
+
             return res.status(200).json({
-                message: 'User succesfully updated',
+                message: 'User successfully updated',
                 recipe: [clean({
                     nickname: req.body.nickname,
                     comment: req.body.comment
